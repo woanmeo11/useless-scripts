@@ -1,0 +1,6 @@
+#!/bin/bash
+systemctl stop NetworkManager
+ifconfig $1 down
+macchanger $1 -m $2
+ifconfig $1 up
+systemctl start NetworkManager
